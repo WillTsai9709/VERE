@@ -13,6 +13,7 @@ interface Track {
     images: { url: string }[];
   };
   duration_ms: number;
+  release_date: string;
 }
 
 interface Album {
@@ -26,15 +27,15 @@ interface Album {
 const MusicSection = () => {
   const [currentTrackId, setCurrentTrackId] = useState<string | null>(null);
   
-  const { data: featuredTrack } = useQuery({
+  const { data: featuredTrack } = useQuery<Track>({
     queryKey: ['/api/spotify/featured-track'],
-  });
+  }) || { album: { images: [{ url: '' }], name: '' }, id: '', name: '', duration_ms: 0, release_date: '' };
   
-  const { data: popularTracks } = useQuery<Track[]>({
+  const { data: popularTracks = [] } = useQuery<Track[]>({
     queryKey: ['/api/spotify/popular-tracks'],
   });
   
-  const { data: albums } = useQuery<Album[]>({
+  const { data: albums = [] } = useQuery<Album[]>({
     queryKey: ['/api/spotify/albums'],
   });
   
@@ -52,7 +53,7 @@ const MusicSection = () => {
     <section id="music" className="py-20 bg-gradient-to-b from-zinc-900 to-zinc-800">
       <div className="container mx-auto px-4">
         <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">Latest Music</h2>
-        <p className="text-gray-400 mb-12 max-w-2xl">Stream the latest releases and favorite tracks from AURA VOX's discography on Spotify.</p>
+        <p className="text-gray-400 mb-12 max-w-2xl">Stream the latest releases and favorite tracks from VERE's discography on Spotify.</p>
         
         {/* Featured Track with Player */}
         <Card className="bg-zinc-800 rounded-xl p-6 mb-12 shadow-md">
@@ -95,14 +96,14 @@ const MusicSection = () => {
                 
                 {/* Audio Player */}
                 <MusicPlayer 
-                  trackId={featuredTrack?.id}
-                  onPlay={() => playTrack(featuredTrack?.id)}
+                  trackId={featuredTrack?.id || ''}
+                  onPlay={() => featuredTrack?.id && playTrack(featuredTrack.id)}
                 />
                 
                 {/* Actions */}
                 <div className="flex flex-wrap gap-4 mt-6">
                   <a 
-                    href={`https://open.spotify.com/track/${featuredTrack?.id}`} 
+                    href={`https://open.spotify.com/track/${featuredTrack?.id || ''}`} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="inline-flex items-center px-5 py-2 bg-[#1DB954] hover:bg-[#1AA64B] text-white font-medium rounded-full transition-colors duration-300"

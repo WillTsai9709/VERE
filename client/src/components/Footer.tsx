@@ -9,9 +9,9 @@ const Footer = () => {
             {/* Artist Logo/Name */}
             <Link href="/" className="font-montserrat font-bold text-xl text-white flex items-center space-x-2">
               <div className="w-8 h-8 rounded-full bg-purple-800 flex items-center justify-center">
-                <span className="text-white text-sm">AV</span>
+                <span className="text-white text-sm">V</span>
               </div>
-              <span>AURA VOX</span>
+              <span>VERE</span>
             </Link>
           </div>
           
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} AURA VOX. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} VERE. All rights reserved.</p>
           </div>
         </div>
       </div>

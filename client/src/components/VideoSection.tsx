@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,24 +12,27 @@ interface Video {
   duration: string;
   viewCount: string;
   category: string;
+  description: string;
 }
 
 const VideoSection = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [featuredVideoId, setFeaturedVideoId] = useState<string | null>(null);
   
-  const { data: videos } = useQuery<Video[]>({
+  const { data: videos = [] } = useQuery<Video[]>({
     queryKey: ['/api/youtube/videos'],
   });
   
-  const { data: featuredVideo } = useQuery({
+  const { data: featuredVideo } = useQuery<Video>({
     queryKey: ['/api/youtube/featured'],
-    onSuccess: (data) => {
-      if (data && data.id) {
-        setFeaturedVideoId(data.id);
-      }
-    }
   });
+
+  // Use useEffect to update the featured video ID when data changes
+  useEffect(() => {
+    if (featuredVideo && featuredVideo.id) {
+      setFeaturedVideoId(featuredVideo.id);
+    }
+  }, [featuredVideo]);
   
   const filteredVideos = videos 
     ? activeCategory === "all" 
@@ -53,7 +56,7 @@ const VideoSection = () => {
     <section id="videos" className="py-20 bg-zinc-900">
       <div className="container mx-auto px-4">
         <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">Videos</h2>
-        <p className="text-gray-400 mb-12 max-w-2xl">Watch live performances, music videos, and behind-the-scenes content from AURA VOX.</p>
+        <p className="text-gray-400 mb-12 max-w-2xl">Watch live performances, music videos, and behind-the-scenes content from VERE.</p>
         
         {/* Featured Video */}
         <div className="mb-12">
@@ -61,7 +64,7 @@ const VideoSection = () => {
             {featuredVideoId ? (
               <iframe 
                 src={`https://www.youtube.com/embed/${featuredVideoId}?rel=0`}
-                title="AURA VOX Featured Video"
+                title="VERE Featured Video"
                 className="absolute top-0 left-0 w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -85,7 +88,7 @@ const VideoSection = () => {
           </div>
           <div className="mt-4">
             <h3 className="font-montserrat font-semibold text-xl text-white">
-              {featuredVideo?.title || "AURA VOX - Live at Electric Forest Festival"}
+              {featuredVideo?.title || "VERE - Live at Electric Forest Festival"}
             </h3>
             <p className="text-gray-400">
               {featuredVideo?.description || "Full performance from the main stage, June 2023"}

@@ -63,7 +63,7 @@ const ConnectSection = () => {
           {/* Contact Information */}
           <div className="md:w-1/2">
             <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">
-              Connect with AURA VOX
+              Connect with VERE
             </h2>
             <p className="text-gray-400 mb-10 leading-relaxed">
               Follow on social media, listen on streaming platforms, or reach out directly for bookings and inquiries.
@@ -77,7 +77,7 @@ const ConnectSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Bookings & Inquiries</h4>
-                  <a href="mailto:bookings@auravox.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">bookings@auravox.com</a>
+                  <a href="mailto:bookings@vere.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">bookings@vere.com</a>
                 </div>
               </div>
               
@@ -88,7 +88,7 @@ const ConnectSection = () => {
                 <div>
                   <h4 className="text-white font-medium mb-1">Management</h4>
                   <p className="text-gray-400">Sonic Agency Berlin</p>
-                  <a href="mailto:management@auravox.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">management@auravox.com</a>
+                  <a href="mailto:management@vere.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">management@vere.com</a>
                 </div>
               </div>
               
@@ -265,7 +265,7 @@ const ConnectSection = () => {
                       className="mt-1 mr-2"
                     />
                     <Label htmlFor="consent" className="text-gray-400 text-sm">
-                      I agree to receive emails about AURA VOX music, merchandise, and events. You can unsubscribe at any time.
+                      I agree to receive emails about VERE music, merchandise, and events. You can unsubscribe at any time.
                     </Label>
                   </div>
                   

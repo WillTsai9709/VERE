@@ -18,7 +18,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex items-end z-20">
         <div className="container mx-auto px-4 pb-20">
           <div className="max-w-2xl">
-            <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-4">AURA VOX</h1>
+            <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-4">VERE</h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">Electronic music producer and performer blending ambient soundscapes with pulsing rhythms.</p>
             <div className="flex flex-wrap gap-4">
               <a href="#music">

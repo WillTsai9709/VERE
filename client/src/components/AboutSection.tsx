@@ -16,7 +16,7 @@ const AboutSection = () => {
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1542&q=80" 
-                alt="AURA VOX artist portrait" 
+                alt="VERE artist portrait" 
                 className="w-full h-auto rounded-lg shadow-md"
               />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-pink-600 rounded-lg flex items-center justify-center">
@@ -28,13 +28,13 @@ const AboutSection = () => {
           {/* About Content */}
           <div className="md:w-3/5">
             <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">
-              About AURA VOX
+              About VERE
             </h2>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              AURA VOX is the electronic music project of Alex Vega, a producer and performer known for creating immersive audio experiences that blend atmospheric soundscapes with driving beats. Based in Berlin, AURA VOX has been pushing the boundaries of electronic music since 2018.
+              VERE is the electronic music project of Alex Vega, a producer and performer known for creating immersive audio experiences that blend atmospheric soundscapes with driving beats. Based in Berlin, VERE has been pushing the boundaries of electronic music since 2018.
             </p>
             <p className="text-gray-300 mb-8 leading-relaxed">
-              With influences ranging from ambient and techno to experimental electronic and cinematic scores, AURA VOX creates music that takes listeners on a journey through sound and emotion. The project has performed at clubs and festivals across Europe and released music on several respected electronic labels.
+              With influences ranging from ambient and techno to experimental electronic and cinematic scores, VERE creates music that takes listeners on a journey through sound and emotion. The project has performed at clubs and festivals across Europe and released music on several respected electronic labels.
             </p>
             
             {/* Stats */}

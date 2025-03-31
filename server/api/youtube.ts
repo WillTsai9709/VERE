@@ -166,7 +166,7 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          channelId: 'UC_kRDdJJBmZ-RUEUKLqu3Ug', // AURA VOX channel ID (example)
+          channelId: 'UC_kRDdJJBmZ-RUEUKLqu3Ug', // VERE channel ID (example)
           maxResults: '6',
           order: 'date',
           type: 'video'
@@ -190,7 +190,7 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          channelId: 'UC_kRDdJJBmZ-RUEUKLqu3Ug', // AURA VOX channel ID (example)
+          channelId: 'UC_kRDdJJBmZ-RUEUKLqu3Ug', // VERE channel ID (example)
           maxResults: '1',
           order: 'viewCount',
           type: 'video'

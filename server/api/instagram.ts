@@ -83,7 +83,7 @@ const transformMedia = (media: any): InstagramImage => {
   return {
     id: media.id,
     url: media.media_url || media.media_type === 'VIDEO' ? media.thumbnail_url : media.media_url,
-    caption: media.caption ? cleanCaption(media.caption) : 'AURA VOX Instagram post',
+    caption: media.caption ? cleanCaption(media.caption) : 'VERE Instagram post',
     thumbnail: media.thumbnail_url || media.media_url,
     timestamp: media.timestamp,
     permalink: media.permalink

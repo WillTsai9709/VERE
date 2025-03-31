@@ -24,8 +24,8 @@ export class MemStorage implements IStorage {
     // Initialize artist info
     this.artistInfo = {
       id: 1,
-      name: "AURA VOX",
-      bio: "AURA VOX is the electronic music project of Alex Vega, a producer and performer known for creating immersive audio experiences that blend atmospheric soundscapes with driving beats. Based in Berlin, AURA VOX has been pushing the boundaries of electronic music since 2018.",
+      name: "VERE",
+      bio: "VERE is the electronic music project of Alex Vega, a producer and performer known for creating immersive audio experiences that blend atmospheric soundscapes with driving beats. Based in Berlin, VERE has been pushing the boundaries of electronic music since 2018.",
       location: "Berlin, Germany",
       since: 2018,
       monthlyListeners: 500000,

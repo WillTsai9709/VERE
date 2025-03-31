@@ -19,9 +19,9 @@ const Header = () => {
         {/* Artist Logo/Name */}
         <Link href="/" className="font-montserrat font-bold text-2xl text-white flex items-center space-x-2">
           <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-white">AV</span>
+            <span className="text-white">V</span>
           </div>
-          <span>AURA VOX</span>
+          <span>VERE</span>
         </Link>
         
         {/* Desktop Navigation */}
