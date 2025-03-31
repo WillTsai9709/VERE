@@ -55,11 +55,10 @@ const AboutSection = () => {
             
             {/* Music Genres */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">Electronic</Badge>
-              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">Ambient</Badge>
-              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">Techno</Badge>
-              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">Downtempo</Badge>
-              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">Experimental</Badge>
+              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">indie pop</Badge>
+              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">alternative</Badge>
+              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">pop</Badge>
+              <Badge variant="secondary" className="px-4 py-2 bg-purple-900 text-white text-sm rounded-full">indie rock</Badge>
             </div>
           </div>
         </div>

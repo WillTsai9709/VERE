@@ -147,7 +147,7 @@ const VideoSection = () => {
         {/* YouTube Link */}
         <div className="mt-12 text-center">
           <a 
-            href="https://youtube.com" 
+            href="https://youtube.com/@vere9809?si=1KOkzlhCcFVbWZZD" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-[#FF0000] hover:bg-[#CC0000] text-white font-medium rounded-full transition-colors duration-300"

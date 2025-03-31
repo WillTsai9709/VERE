@@ -107,7 +107,7 @@ const ConnectSection = () => {
             <h3 className="font-montserrat font-semibold text-xl text-white mb-4">Follow</h3>
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://spotify.com" 
+                href="https://open.spotify.com/artist/4EXkqFOhrs5mcfZwFgiEOF?si=zDIQP4o4T0yXjFIs2jrsSw" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-[#1DB954] hover:bg-[#1AA64B] flex items-center justify-center rounded-full transition-colors duration-300"
@@ -118,7 +118,7 @@ const ConnectSection = () => {
                 </svg>
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/thisisvere?igsh=MWRya3F3YXV1ZWdzaw%3D%3D&utm_source=qr" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:opacity-90 flex items-center justify-center rounded-full transition-opacity duration-300"
@@ -129,7 +129,7 @@ const ConnectSection = () => {
                 </svg>
               </a>
               <a 
-                href="https://youtube.com" 
+                href="https://youtube.com/@vere9809?si=1KOkzlhCcFVbWZZD" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-[#FF0000] hover:bg-[#CC0000] flex items-center justify-center rounded-full transition-colors duration-300"
