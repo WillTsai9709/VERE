@@ -171,9 +171,9 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'VERE music', // Search for VERE music videos
+          q: 'VERE band indie pop', // More specific search for VERE band
           maxResults: '6',
-          order: 'date',
+          order: 'relevance',
           type: 'video'
         });
         
@@ -195,9 +195,9 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'VERE music video', // Search for VERE music videos
+          q: 'VERE band indie pop official video', // More specific search for VERE band videos
           maxResults: '1',
-          order: 'relevance', // Most relevant result
+          order: 'viewCount', // Get the most viewed video
           type: 'video'
         });
         
