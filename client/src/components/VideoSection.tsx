@@ -19,11 +19,11 @@ const VideoSection = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [featuredVideoId, setFeaturedVideoId] = useState<string | null>(null);
   
-  const { data: videos = [] } = useQuery<Video[]>({
+  const { data: videos = [], isError: videosError } = useQuery<Video[]>({
     queryKey: ['/api/youtube/videos'],
   });
   
-  const { data: featuredVideo } = useQuery<Video>({
+  const { data: featuredVideo, isError: featuredError } = useQuery<Video>({
     queryKey: ['/api/youtube/featured'],
   });
 
@@ -57,6 +57,23 @@ const VideoSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">Videos</h2>
         <p className="text-gray-400 mb-12 max-w-2xl">Watch live performances, music videos, and behind-the-scenes content from VERE.</p>
+        
+        {/* API Error Message */}
+        {(videosError || featuredError) && (
+          <div className="mb-8 p-4 border border-[#FF0000]/30 bg-[#FF0000]/10 rounded-lg">
+            <p className="text-white">
+              <span className="font-medium">Note:</span> We're currently experiencing issues connecting to YouTube. Please visit our 
+              <a 
+                href="https://youtube.com/@vere9809?si=1KOkzlhCcFVbWZZD" 
+                className="text-[#FF0000] ml-1 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                YouTube channel
+              </a> directly to see our latest videos.
+            </p>
+          </div>
+        )}
         
         {/* Featured Video */}
         <div className="mb-12">

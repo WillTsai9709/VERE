@@ -88,7 +88,12 @@ const fetchFromYouTube = async (endpoint: string, params: Record<string, string>
   
   if (!response.ok) {
     const error = await response.json().catch(() => ({ error: { message: "Unknown error" } }));
-    throw new Error(`YouTube API error: ${error.error?.message || response.statusText}`);
+    
+    if (error.error?.code === 403 && error.error?.errors && error.error.errors[0]?.reason === 'accessNotConfigured') {
+      throw new Error(`YouTube API not configured: ${error.error.message}`);
+    } else {
+      throw new Error(`YouTube API error: ${error.error?.message || response.statusText}`);
+    }
   }
   
   return response.json();
@@ -166,7 +171,7 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          channelId: 'UC_kRDdJJBmZ-RUEUKLqu3Ug', // VERE channel ID (example)
+          q: 'VERE music', // Search for VERE music videos
           maxResults: '6',
           order: 'date',
           type: 'video'
@@ -190,9 +195,9 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          channelId: 'UC_kRDdJJBmZ-RUEUKLqu3Ug', // VERE channel ID (example)
+          q: 'VERE music video', // Search for VERE music videos
           maxResults: '1',
-          order: 'viewCount',
+          order: 'relevance', // Most relevant result
           type: 'video'
         });
         

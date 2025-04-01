@@ -88,6 +88,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       };
     }
     
+    // Check YouTube API status
+    try {
+      await youtubeApi.getVideos();
+      services.youtube = { status: "up", message: "YouTube API is working" };
+    } catch (error: any) {
+      services.youtube = {
+        status: "down",
+        message: `YouTube API error: ${error.message}`
+      };
+    }
+    
     // Return status of all services
     res.json({
       status: "ok",
