@@ -171,7 +171,7 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'VERE band indie pop', // More specific search for VERE band
+          q: 'VERE @vere9809 indie pop', // 使用正确的YouTube频道ID
           maxResults: '6',
           order: 'relevance',
           type: 'video'
@@ -195,7 +195,7 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'VERE band indie pop official video', // More specific search for VERE band videos
+          q: 'VERE @vere9809 official video', // 使用正确的YouTube频道ID
           maxResults: '1',
           order: 'viewCount', // Get the most viewed video
           type: 'video'

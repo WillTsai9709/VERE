@@ -7,7 +7,12 @@ import { Play } from "lucide-react";
 interface Video {
   id: string;
   title: string;
-  thumbnail: string;
+  thumbnail?: string;
+  thumbnails?: {
+    default?: { url: string; width: number; height: number };
+    medium?: { url: string; width: number; height: number };
+    high?: { url: string; width: number; height: number };
+  };
   publishedAt: string;
   duration: string;
   viewCount: string;
@@ -135,7 +140,7 @@ const VideoSection = () => {
               <div key={video.id} className="group cursor-pointer" onClick={() => playVideo(video.id)}>
                 <div className="relative aspect-video rounded-lg overflow-hidden mb-3">
                   <img 
-                    src={video.thumbnail}
+                    src={video.thumbnail || video.thumbnails?.high?.url || video.thumbnails?.medium?.url || video.thumbnails?.default?.url}
                     alt={`${video.title} thumbnail`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
