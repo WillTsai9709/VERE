@@ -27,16 +27,40 @@ interface Album {
 const MusicSection = () => {
   const [currentTrackId, setCurrentTrackId] = useState<string | null>(null);
   
-  const { data: featuredTrack } = useQuery<Track>({
+  const { 
+    data: featuredTrack, 
+    isLoading: isLoadingFeaturedTrack,
+    isError: isErrorFeaturedTrack
+  } = useQuery<Track>({
     queryKey: ['/api/spotify/featured-track'],
-  }) || { album: { images: [{ url: '' }], name: '' }, id: '', name: '', duration_ms: 0, release_date: '' };
-  
-  const { data: popularTracks = [] } = useQuery<Track[]>({
-    queryKey: ['/api/spotify/popular-tracks'],
+    retry: 1,
+    retryDelay: 1000,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
   
-  const { data: albums = [] } = useQuery<Album[]>({
+  const { 
+    data: popularTracks = [], 
+    isLoading: isLoadingPopularTracks,
+    isError: isErrorPopularTracks
+  } = useQuery<Track[]>({
+    queryKey: ['/api/spotify/popular-tracks'],
+    retry: 1,
+    retryDelay: 1000,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+  });
+  
+  const { 
+    data: albums = [], 
+    isLoading: isLoadingAlbums,
+    isError: isErrorAlbums
+  } = useQuery<Album[]>({
     queryKey: ['/api/spotify/albums'],
+    retry: 1,
+    retryDelay: 1000,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
   
   const playTrack = (trackId: string) => {

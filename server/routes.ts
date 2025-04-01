@@ -1,4 +1,4 @@
-import type { Express } from "express";
+import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import spotifyApi from "./api/spotify";
@@ -67,6 +67,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Error fetching track:", error);
       res.status(500).json({ message: "Failed to fetch track from Spotify" });
     }
+  });
+  
+  // API health check and status routes
+  app.get("/api/status", async (req: Request, res: Response) => {
+    const services = {
+      spotify: { status: "unknown", message: "" },
+      youtube: { status: "unknown", message: "" },
+      instagram: { status: "unknown", message: "" }
+    };
+    
+    // Check Spotify API status
+    try {
+      await spotifyApi.getArtistProfile();
+      services.spotify = { status: "up", message: "Spotify API is working" };
+    } catch (error: any) {
+      services.spotify = { 
+        status: "down", 
+        message: `Spotify API error: ${error.message}` 
+      };
+    }
+    
+    // Return status of all services
+    res.json({
+      status: "ok",
+      environment: process.env.NODE_ENV || 'development',
+      timestamp: new Date().toISOString(),
+      services
+    });
   });
 
   // YouTube API routes
