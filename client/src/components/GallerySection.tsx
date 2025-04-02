@@ -1,54 +1,89 @@
-import { Instagram } from "lucide-react";
+import { Instagram, AlertCircle, Camera } from "lucide-react";
+import { useInstagramGallery } from "../hooks/use-instagram";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
-// 使用静态示例照片
-const examplePhotos = [
+// 預設顯示這些圖片，當API連接失敗時使用
+const fallbackPhotos = [
   {
     id: '1',
     url: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    caption: 'Live performance at Summer Festival'
+    caption: 'Live performance at Summer Festival',
+    permalink: 'https://www.instagram.com/thisisvere'
   },
   {
     id: '2',
     url: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    caption: 'In the studio recording new tracks'
+    caption: 'In the studio recording new tracks',
+    permalink: 'https://www.instagram.com/thisisvere'
   },
   {
     id: '3',
     url: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    caption: 'Crowd at last night\'s show'
+    caption: 'Crowd at last night\'s show',
+    permalink: 'https://www.instagram.com/thisisvere'
   },
   {
     id: '4',
     url: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    caption: 'Backstage moments'
+    caption: 'Backstage moments',
+    permalink: 'https://www.instagram.com/thisisvere'
   },
   {
     id: '5',
     url: 'https://images.unsplash.com/photo-1515806215421-f251837fe7a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1648&q=80',
-    caption: 'New merch drop coming soon!'
+    caption: 'New merch drop coming soon!',
+    permalink: 'https://www.instagram.com/thisisvere'
   },
   {
     id: '6',
     url: 'https://images.unsplash.com/photo-1556379118-7034d926d258?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    caption: 'Writing session for the new album'
+    caption: 'Writing session for the new album',
+    permalink: 'https://www.instagram.com/thisisvere'
   },
   {
     id: '7',
     url: 'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    caption: 'Festival performance highlights'
+    caption: 'Festival performance highlights',
+    permalink: 'https://www.instagram.com/thisisvere'
   },
   {
     id: '8',
     url: 'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    caption: 'Behind the scenes of our music video'
+    caption: 'Behind the scenes of our music video',
+    permalink: 'https://www.instagram.com/thisisvere'
   }
 ];
 
 const GallerySection = () => {
+  // 使用Instagram API获取图片
+  const { data: galleryImages, isLoading, error } = useInstagramGallery();
+  
   // 直接跳转到Instagram页面的功能
   const openInstagram = () => {
-    window.open("https://www.instagram.com/VERE", "_blank");
+    window.open("https://www.instagram.com/thisisvere", "_blank");
   };
+  
+  // 渲染加载状态的骨架屏
+  const renderSkeleton = () => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {Array.from({ length: 8 }).map((_, index) => (
+        <div key={index} className="gallery-item overflow-hidden rounded-lg">
+          <Skeleton className="w-full h-64" />
+        </div>
+      ))}
+    </div>
+  );
+  
+  // 渲染错误状态
+  const renderError = () => (
+    <Alert variant="default" className="mb-8 bg-amber-50/10 border-amber-200/20">
+      <Camera className="h-4 w-4 text-amber-400 mr-2" />
+      <AlertDescription className="text-amber-100">
+        Unable to load live Instagram photos. Showing our recent highlights instead.
+      </AlertDescription>
+    </Alert>
+  );
 
   return (
     <section id="gallery" className="py-20 bg-gradient-to-b from-zinc-800 to-zinc-900">
@@ -67,41 +102,88 @@ const GallerySection = () => {
               </div>
             </div>
             <a 
-              href="https://www.instagram.com/VERE" 
+              href="https://www.instagram.com/thisisvere" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:from-[#833AB4]/90 hover:via-[#FD1D1D]/90 hover:to-[#FCAF45]/90 text-white font-medium rounded-full transition-colors duration-300"
             >
-              @VERE
+              @thisisvere
             </a>
           </div>
         </div>
         
-        {/* Gallery Grid - 显示静态照片 */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {examplePhotos.map((photo) => (
-            <div 
-              key={photo.id} 
-              className="gallery-item group relative cursor-pointer overflow-hidden rounded-lg"
-              onClick={openInstagram}
-            >
-              <img 
-                src={photo.url}
-                alt={photo.caption} 
-                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4">
-                <Instagram className="text-white h-6 w-6 mb-2" />
-                <p className="text-white text-sm text-center">{photo.caption}</p>
-              </div>
+        {/* Gallery Grid */}
+        {isLoading ? (
+          renderSkeleton()
+        ) : error ? (
+          <>
+            {renderError()}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {fallbackPhotos.map((photo) => (
+                <div 
+                  key={photo.id} 
+                  className="gallery-item group relative cursor-pointer overflow-hidden rounded-lg"
+                  onClick={() => window.open(photo.permalink, '_blank')}
+                >
+                  <img 
+                    src={photo.url}
+                    alt={photo.caption} 
+                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4">
+                    <Instagram className="text-white h-6 w-6 mb-2" />
+                    <p className="text-white text-sm text-center">{photo.caption}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        ) : galleryImages && galleryImages.length > 0 ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {galleryImages.map((photo) => (
+              <div 
+                key={photo.id} 
+                className="gallery-item group relative cursor-pointer overflow-hidden rounded-lg"
+                onClick={() => window.open(photo.permalink, '_blank')}
+              >
+                <img 
+                  src={photo.thumbnail || photo.url}
+                  alt={photo.caption} 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4">
+                  <Instagram className="text-white h-6 w-6 mb-2" />
+                  <p className="text-white text-sm text-center">{photo.caption}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {fallbackPhotos.map((photo) => (
+              <div 
+                key={photo.id} 
+                className="gallery-item group relative cursor-pointer overflow-hidden rounded-lg"
+                onClick={() => window.open(photo.permalink, '_blank')}
+              >
+                <img 
+                  src={photo.url}
+                  alt={photo.caption} 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4">
+                  <Instagram className="text-white h-6 w-6 mb-2" />
+                  <p className="text-white text-sm text-center">{photo.caption}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
         
         {/* Instagram Link */}
         <div className="mt-12 text-center">
           <a 
-            href="https://www.instagram.com/VERE" 
+            href="https://www.instagram.com/thisisvere" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:from-[#833AB4]/90 hover:via-[#FD1D1D]/90 hover:to-[#FCAF45]/90 text-white font-medium rounded-full transition-colors duration-300"
