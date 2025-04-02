@@ -167,74 +167,10 @@ const instagramApi = {
     return data.access_token;
   },
   
-  // Fallback gallery with sample Instagram media data structure if API fails
-  getFallbackGallery: async (): Promise<InstagramImage[]> => {
-    return [
-      {
-        id: "gallery-1",
-        url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
-        caption: "Live performance at Electric Forest Festival 2023",
-        thumbnail: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      },
-      {
-        id: "gallery-2",
-        url: "https://images.unsplash.com/photo-1526309789204-7c7482003da7",
-        caption: "Studio recording session for Nebula Dreams album",
-        thumbnail: "https://images.unsplash.com/photo-1526309789204-7c7482003da7?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      },
-      {
-        id: "gallery-3",
-        url: "https://images.unsplash.com/photo-1519635859-a20456debb86",
-        caption: "Live set at Berghain, Berlin",
-        thumbnail: "https://images.unsplash.com/photo-1519635859-a20456debb86?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      },
-      {
-        id: "gallery-4",
-        url: "https://images.unsplash.com/photo-1571702998120-08e3ab04913a",
-        caption: "Performance with custom light show setup",
-        thumbnail: "https://images.unsplash.com/photo-1571702998120-08e3ab04913a?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      },
-      {
-        id: "gallery-5",
-        url: "https://images.unsplash.com/photo-1563841707107-e4c70b6abce9",
-        caption: "Equipment closeup during studio session",
-        thumbnail: "https://images.unsplash.com/photo-1563841707107-e4c70b6abce9?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      },
-      {
-        id: "gallery-6",
-        url: "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b",
-        caption: "View from the stage at Tomorrowland 2023",
-        thumbnail: "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      },
-      {
-        id: "gallery-7",
-        url: "https://images.unsplash.com/photo-1516223725307-6f76b9ec8742",
-        caption: "Behind the scenes before Amsterdam show",
-        thumbnail: "https://images.unsplash.com/photo-1516223725307-6f76b9ec8742?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      },
-      {
-        id: "gallery-8",
-        url: "https://images.unsplash.com/photo-1578950342694-5e704ce8bd59",
-        caption: "In the studio with collaborators",
-        thumbnail: "https://images.unsplash.com/photo-1578950342694-5e704ce8bd59?w=500",
-        timestamp: new Date().toISOString(),
-        permalink: "https://instagram.com"
-      }
-    ];
+  // Clear cache for testing or refreshing data
+  clearCache: () => {
+    cache.clear();
+    console.log("Instagram API cache cleared");
   }
 };
 
