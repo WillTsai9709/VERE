@@ -139,6 +139,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ message: "Failed to fetch video from YouTube" });
     }
   });
+  
+  // 清除 YouTube API 缓存的路由
+  app.post("/api/youtube/clear-cache", async (req, res) => {
+    try {
+      youtubeApi.clearCache();
+      res.json({ success: true, message: "YouTube API cache cleared successfully" });
+    } catch (error) {
+      console.error("Error clearing YouTube API cache:", error);
+      res.status(500).json({ message: "Failed to clear YouTube API cache" });
+    }
+  });
 
   // Instagram API routes
   app.get("/api/instagram/gallery", async (req, res) => {

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Play, RefreshCw } from "lucide-react";
+import { useClearYouTubeCache } from "../hooks/use-youtube";
+import { useToast } from "@/hooks/use-toast";
 
 interface Video {
   id: string;
@@ -23,14 +25,17 @@ interface Video {
 const VideoSection = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [featuredVideoId, setFeaturedVideoId] = useState<string | null>(null);
+  const { toast } = useToast();
   
-  const { data: videos = [], isError: videosError } = useQuery<Video[]>({
+  const { data: videos = [], isError: videosError, isLoading: isVideosLoading } = useQuery<Video[]>({
     queryKey: ['/api/youtube/videos'],
   });
   
-  const { data: featuredVideo, isError: featuredError } = useQuery<Video>({
+  const { data: featuredVideo, isError: featuredError, isLoading: isFeaturedLoading } = useQuery<Video>({
     queryKey: ['/api/youtube/featured'],
   });
+  
+  const clearCacheMutation = useClearYouTubeCache();
 
   // Use useEffect to update the featured video ID when data changes
   useEffect(() => {
@@ -47,6 +52,23 @@ const VideoSection = () => {
   
   const playVideo = (videoId: string) => {
     window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+  };
+  
+  const handleClearCache = async () => {
+    try {
+      await clearCacheMutation.mutateAsync();
+      toast({
+        title: "缓存已清除",
+        description: "YouTube 视频已更新。",
+        variant: "default",
+      });
+    } catch (error) {
+      toast({
+        title: "操作失败",
+        description: "清除缓存时出错，请稍后再试。",
+        variant: "destructive",
+      });
+    }
   };
 
   const categories = [
@@ -166,8 +188,8 @@ const VideoSection = () => {
           )}
         </div>
         
-        {/* YouTube Link */}
-        <div className="mt-12 text-center">
+        {/* YouTube Links and Actions */}
+        <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4">
           <a 
             href="https://youtube.com/@vere9809?si=1KOkzlhCcFVbWZZD" 
             target="_blank" 
@@ -179,6 +201,16 @@ const VideoSection = () => {
             </svg>
             Subscribe on YouTube
           </a>
+          
+          <Button
+            variant="outline"
+            className="inline-flex items-center px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-medium rounded-full transition-colors duration-300"
+            onClick={handleClearCache}
+            disabled={clearCacheMutation.isPending || isVideosLoading}
+          >
+            <RefreshCw className={`h-5 w-5 mr-2 ${clearCacheMutation.isPending ? 'animate-spin' : ''}`} />
+            {clearCacheMutation.isPending ? '更新中...' : '刷新视频'}
+          </Button>
         </div>
       </div>
     </section>

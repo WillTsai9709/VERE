@@ -171,11 +171,12 @@ const youtubeApi = {
     return getCachedOrFetch<YouTubeVideo[]>(
       'youtube:videos',
       async () => {
+        // 获取特定频道的视频，而不是搜索
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'vere indie music', // 使用更简单的搜索词
+          channelId: 'UCXTqDmIhC2PEpQwzcmjUyQA', // @vere9809的频道ID
           maxResults: '6',
-          order: 'relevance',
+          order: 'date', // 按发布日期排序
           type: 'video'
         });
         
@@ -195,11 +196,12 @@ const youtubeApi = {
     return getCachedOrFetch<YouTubeVideo>(
       'youtube:featured',
       async () => {
+        // 获取特定频道的最受欢迎视频
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'vere music video', // 使用更简单的搜索词
+          channelId: 'UCXTqDmIhC2PEpQwzcmjUyQA', // @vere9809的频道ID
           maxResults: '1',
-          order: 'viewCount', // Get the most viewed video
+          order: 'viewCount', // 按观看量排序
           type: 'video'
         });
         
@@ -261,6 +263,13 @@ const youtubeApi = {
       },
       CACHE_DURATION.SHORT
     );
+  },
+  
+  // Clear cache
+  clearCache: () => {
+    cache.clear();
+    console.log('YouTube API cache cleared');
+    return true;
   }
 };
 
