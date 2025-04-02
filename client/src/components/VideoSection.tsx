@@ -8,10 +8,10 @@ interface Video {
   id: string;
   title: string;
   thumbnail?: string;
-  thumbnails?: {
-    default?: { url: string; width: number; height: number };
-    medium?: { url: string; width: number; height: number };
-    high?: { url: string; width: number; height: number };
+  thumbnails: {
+    default: { url: string; width: number; height: number };
+    medium: { url: string; width: number; height: number };
+    high: { url: string; width: number; height: number };
   };
   publishedAt: string;
   duration: string;

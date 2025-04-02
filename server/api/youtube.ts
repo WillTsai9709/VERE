@@ -10,6 +10,8 @@ const CACHE_DURATION = {
 
 // In-memory cache
 const cache = new Map<string, { data: any, expires: number }>();
+// Clear cache
+cache.clear();
 
 // Get data from cache or fetch it if not cached or expired
 const getCachedOrFetch = async <T>(key: string, fetchFn: () => Promise<T>, duration: number): Promise<T> => {
@@ -171,7 +173,7 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'VERE @vere9809 indie pop', // 使用正确的YouTube频道ID
+          q: 'vere indie music', // 使用更简单的搜索词
           maxResults: '6',
           order: 'relevance',
           type: 'video'
@@ -195,7 +197,7 @@ const youtubeApi = {
       async () => {
         const data = await fetchFromYouTube('search', {
           part: 'snippet',
-          q: 'VERE @vere9809 official video', // 使用正确的YouTube频道ID
+          q: 'vere music video', // 使用更简单的搜索词
           maxResults: '1',
           order: 'viewCount', // Get the most viewed video
           type: 'video'
