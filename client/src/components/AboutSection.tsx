@@ -30,13 +30,13 @@ const AboutSection = () => {
             <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">
               About VERE
             </h2>
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-gray-300 mb-4 leading-relaxed chinese-text">
+              VERE 是一位獨立流行樂團、製作、混音和表演藝術家，致力於創造融合溫暖和豐富質感的沉浸式音頻體驗。VERE 目前駐台北，自 2022 年以來，持續創作具有情感共鳴的音樂。
+              如果您有興趣合作或只是想聊聊，歡迎隨時聯繫我們。
+            </p>
+            <p className="text-gray-300 mb-8 leading-relaxed">
               VERE is an indie pop music producer, mixing engineer, and performing artist for creating immersive audio experiences that blend warm and rich textures. Based in Taipei, VERE has been crafting emotionally resonant music since 2022.
               If you are interested in collaborating or just want to chat, feel free to contact us.
-            </p>
-            <p className="text-gray-300 mb-8 leading-relaxed chinese-text">
-              VERE 是一位獨立流行音樂製作人、混音工程師和表演藝術家，致力於創造融合溫暖和豐富質感的沉浸式音頻體驗。VERE 目前駐台北，自 2022 年以來，持續創作具有情感共鳴的音樂。
-              如果您有興趣合作或只是想聊聊，歡迎隨時聯繫我們。
             </p>
             {/* Second paragraph removed as requested */}
             
