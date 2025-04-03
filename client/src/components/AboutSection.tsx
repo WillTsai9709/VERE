@@ -31,10 +31,10 @@ const AboutSection = () => {
               About VERE
             </h2>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              VERE is the electronic music project of Alex Vega, a producer and performer known for creating immersive audio experiences that blend atmospheric soundscapes with driving beats. Based in Berlin, VERE has been pushing the boundaries of electronic music since 2022.
+              VERE is an indie pop music producer, mixing engineer, and performing artist known for creating immersive audio experiences that blend warm and rich textures. Based in Taipei, VERE has been crafting emotionally resonant music since 2022.
             </p>
             <p className="text-gray-300 mb-8 leading-relaxed">
-              With influences ranging from ambient and techno to experimental electronic and cinematic scores, VERE creates music that takes listeners on a journey through sound and emotion. The project has performed at clubs and festivals across Europe and released music on several respected electronic labels.
+              With a unique approach to songwriting and production, VERE creates music that connects with listeners on an emotional level. Each track is carefully crafted to create atmospheric and evocative soundscapes that invite listeners to experience a range of feelings and moods.
             </p>
             
             {/* Stats - Hidden per request */}
