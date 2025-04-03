@@ -27,11 +27,8 @@ const AboutSection = () => {
           
           {/* About Content */}
           <div className="md:w-3/5">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">
               About VERE
-            </h2>
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6 chinese-text">
-              關於 VERE
             </h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
               VERE is an indie pop music producer, mixing engineer, and performing artist for creating immersive audio experiences that blend warm and rich textures. Based in Taipei, VERE has been crafting emotionally resonant music since 2022.
