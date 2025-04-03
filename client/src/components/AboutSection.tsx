@@ -34,10 +34,12 @@ const AboutSection = () => {
               關於 VERE
             </h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              VERE is an indie pop music producer, mixing engineer, and performing artist known for creating immersive audio experiences that blend warm and rich textures. Based in Taipei, VERE has been crafting emotionally resonant music since 2022.
+              VERE is an indie pop music producer, mixing engineer, and performing artist for creating immersive audio experiences that blend warm and rich textures. Based in Taipei, VERE has been crafting emotionally resonant music since 2022.
+              If you are interested in collaborating or just want to chat, feel free to contact us.
             </p>
             <p className="text-gray-300 mb-4 leading-relaxed chinese-text">
-              VERE 是一位獨立流行音樂製作人、混音工程師和表演藝術家，以創造融合溫暖豐富質感的沉浸式音樂體驗而聞名。在台北，VERE 自 2022 年以來一直致力於創作情感共鳴的音樂。
+              VERE 是一位獨立流行音樂製作人、混音工程師和表演藝術家，致力於創造融合溫暖和豐富質感的沉浸式音頻體驗。VERE 目前駐台北，自 2022 年以來，持續創作具有情感共鳴的音樂。
+              如果您有興趣合作或只是想聊聊，歡迎隨時聯繫我們。
             </p>
             <p className="text-gray-300 mb-4 leading-relaxed">
               With a unique approach to songwriting and production, VERE creates music that connects with listeners on an emotional level. Each track is carefully crafted to create atmospheric and evocative soundscapes that invite listeners to experience a range of feelings and moods.

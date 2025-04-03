@@ -19,7 +19,7 @@ const HeroSection = () => {
         <div className="container mx-auto px-4 pb-20">
           <div className="max-w-2xl">
             <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-4">VERE</h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-4">Indie pop music producer, mixing engineer, and performing artist. Blending warm and rich texture, creating an emotional atmosphere.</p>
+            <p className="text-lg md:text-xl text-gray-200 mb-4">Indie pop music producer, mixing engineer, and performing artist. Blending warm and rich texture, creating a emotional atmosphere.</p>
             <p className="text-lg md:text-xl text-gray-200 mb-8 chinese-text">獨立流行音樂製作人、混音兼表演藝術家。融合溫暖而豐富的質感，營造出情緒的氛圍。</p>
             <div className="flex flex-wrap gap-4">
               <a href="#music">
