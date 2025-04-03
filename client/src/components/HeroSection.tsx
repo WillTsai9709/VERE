@@ -11,7 +11,8 @@ const HeroSection = () => {
         <img 
           src={bannerImage} 
           alt="VERE artists portrait" 
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: '50% 15%' }}
         />
       </div>
       
