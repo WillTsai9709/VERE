@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Music, UserPlus } from "lucide-react";
+import bannerImage from "../assets/DSC00061.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,8 +9,8 @@ const HeroSection = () => {
       <div className="relative h-[80vh] w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900 z-10"></div>
         <img 
-          src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-          alt="Artist on stage performing" 
+          src={bannerImage} 
+          alt="VERE artists portrait" 
           className="w-full h-full object-cover object-center"
         />
       </div>
