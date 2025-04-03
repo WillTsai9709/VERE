@@ -11,7 +11,7 @@ const HeroSection = () => {
         <img 
           src={bannerImage} 
           alt="VERE artists portrait" 
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       
