@@ -77,7 +77,7 @@ const ConnectSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Bookings & Inquiries</h4>
-                  <a href="mailto:bookings@vere.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">bookings@vere.com</a>
+                  <a href="mailto:vere9809@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">vere9809@gmail.com</a>
                 </div>
               </div>
               
@@ -88,7 +88,7 @@ const ConnectSection = () => {
                 <div>
                   <h4 className="text-white font-medium mb-1">Management</h4>
                   <p className="text-gray-400">Sonic Agency Berlin</p>
-                  <a href="mailto:management@vere.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">management@vere.com</a>
+                  <a href="mailto:vere9809@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">vere9809@gmail.com</a>
                 </div>
               </div>
               
@@ -186,55 +186,9 @@ const ConnectSection = () => {
             </div>
           </div>
           
-          {/* Tour Dates & Newsletter */}
+          {/* Newsletter Only */}
           <div className="md:w-1/2">
-            <Card className="bg-zinc-800 rounded-xl p-6 mb-8">
-              <CardContent className="p-0">
-                <h3 className="font-montserrat font-semibold text-xl text-white mb-6">Upcoming Tour Dates</h3>
-                
-                <div className="space-y-6">
-                  {tourDates ? (
-                    tourDates.map((date) => (
-                      <div key={date.id} className="flex items-center justify-between border-b border-zinc-700 pb-4">
-                        <div>
-                          <div className="text-purple-400 font-medium">
-                            {new Date(date.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toUpperCase()}
-                          </div>
-                          <div className="text-white font-medium">{date.venue}</div>
-                          <div className="text-gray-400 text-sm">{date.location}</div>
-                        </div>
-                        <a 
-                          href={date.ticketLink} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-purple-800 hover:bg-purple-900 text-white text-sm rounded-full transition-colors duration-300"
-                        >
-                          Tickets
-                        </a>
-                      </div>
-                    ))
-                  ) : (
-                    // Fallback for loading state
-                    Array(4).fill(0).map((_, index) => (
-                      <div key={index} className="flex items-center justify-between border-b border-zinc-700 pb-4">
-                        <div>
-                          <div className="h-5 w-24 bg-zinc-700 rounded mb-2"></div>
-                          <div className="h-5 w-32 bg-zinc-700 rounded mb-2"></div>
-                          <div className="h-4 w-28 bg-zinc-700 rounded"></div>
-                        </div>
-                        <div className="px-4 py-2 bg-zinc-700 text-transparent rounded-full">Tickets</div>
-                      </div>
-                    ))
-                  )}
-                </div>
-                
-                <div className="mt-6 text-center">
-                  <a href="#" className="inline-block text-purple-400 hover:text-purple-300 transition-colors duration-300">
-                    View all tour dates <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Tour dates section hidden */}
             
             {/* Newsletter */}
             <Card className="bg-zinc-800 rounded-xl p-6">
