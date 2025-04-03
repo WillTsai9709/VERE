@@ -80,7 +80,10 @@ const GallerySection = () => {
     <Alert variant="default" className="mb-8 bg-amber-50/10 border-amber-200/20">
       <Camera className="h-4 w-4 text-amber-400 mr-2" />
       <AlertDescription className="text-amber-100">
-        Unable to load live Instagram photos. Showing our recent highlights instead.
+        <div className="flex flex-col">
+          <span>Unable to load live Instagram photos. Showing our recent highlights instead.</span>
+          <span className="chinese-text">無法加載 Instagram 最新照片。顯示我們的近期精選照片作為替代。</span>
+        </div>
       </AlertDescription>
     </Alert>
   );
@@ -89,7 +92,9 @@ const GallerySection = () => {
     <section id="gallery" className="py-20 bg-gradient-to-b from-zinc-800 to-zinc-900">
       <div className="container mx-auto px-4">
         <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">Gallery</h2>
-        <p className="text-gray-400 mb-6 max-w-2xl">A visual journey through performances, studio sessions, and behind-the-scenes moments.</p>
+        <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4 chinese-text">圖片集</h2>
+        <p className="text-gray-400 mb-3 max-w-2xl">A visual journey through performances, studio sessions, and behind-the-scenes moments.</p>
+        <p className="text-gray-400 mb-6 max-w-2xl chinese-text">通過表演、錄音室時光和幕後花絮，呈現視覺旅程。</p>
         
         {/* Instagram Follow Banner */}
         <div className="mb-10 p-4 rounded-xl bg-gradient-to-r from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#FCAF45]/20 border border-[#FD1D1D]/20">
@@ -97,8 +102,10 @@ const GallerySection = () => {
             <div className="flex items-center mb-4 md:mb-0">
               <Instagram className="h-8 w-8 text-[#FD1D1D] mr-3" />
               <div>
-                <h3 className="font-semibold text-white text-lg">Follow us on Instagram</h3>
+                <h3 className="font-semibold text-white text-lg mb-1">Follow us on Instagram</h3>
+                <h3 className="font-semibold text-white text-lg mb-1 chinese-text">在 Instagram 上關注我們</h3>
                 <p className="text-gray-300">For daily updates, behind-the-scenes content and more</p>
+                <p className="text-gray-300 chinese-text">獲取每日更新、幕後花絮等更多內容</p>
               </div>
             </div>
             <a 
@@ -191,7 +198,8 @@ const GallerySection = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
             </svg>
-            See more on Instagram
+            <span className="mr-1">See more on Instagram</span>
+            <span className="chinese-text">在 Instagram 上查看更多</span>
           </a>
         </div>
       </div>

@@ -77,7 +77,9 @@ const MusicSection = () => {
     <section id="music" className="py-20 bg-gradient-to-b from-zinc-900 to-zinc-800">
       <div className="container mx-auto px-4">
         <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">Latest Music</h2>
-        <p className="text-gray-400 mb-12 max-w-2xl">Stream the latest releases and favorite tracks from VERE's discography on Spotify.</p>
+        <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4 chinese-text">最新音樂</h2>
+        <p className="text-gray-400 mb-4 max-w-2xl">Stream the latest releases and favorite tracks from VERE's discography on Spotify.</p>
+        <p className="text-gray-400 mb-12 max-w-2xl chinese-text">在 Spotify 上播放 VERE 最新發行的作品和熱門歌曲。</p>
         
         {/* Featured Track with Player */}
         <Card className="bg-zinc-800 rounded-xl p-6 mb-12 shadow-md">
@@ -105,8 +107,14 @@ const MusicSection = () => {
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="font-montserrat font-bold text-2xl text-white">{featuredTrack?.name || "Nebula Dreams"}</h3>
-                    <p className="text-pink-500 mb-1">Latest Single</p>
-                    <p className="text-gray-400 text-sm">Released: {new Date(featuredTrack?.release_date || "2023-10-12").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                    <div className="flex space-x-2">
+                      <p className="text-pink-500 mb-1">Latest Single</p>
+                      <p className="text-pink-500 mb-1 chinese-text">最新單曲</p>
+                    </div>
+                    <div className="flex space-x-2">
+                      <p className="text-gray-400 text-sm">Released: {new Date(featuredTrack?.release_date || "2023-10-12").toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                      <p className="text-gray-400 text-sm chinese-text">發行日期: {new Date(featuredTrack?.release_date || "2023-10-12").toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                    </div>
                   </div>
                   <div className="flex space-x-3">
                     <button className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -135,7 +143,8 @@ const MusicSection = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
                     </svg>
-                    Play on Spotify
+                    <span className="mr-1">Play on Spotify</span>
+                    <span className="chinese-text">在 Spotify 上播放</span>
                   </a>
                   <a 
                     href="https://music.apple.com/tw/artist/vere/290581407" 
@@ -211,7 +220,8 @@ const MusicSection = () => {
         </Card>
         
         {/* Popular Tracks */}
-        <h3 className="font-montserrat font-semibold text-2xl text-white mb-6">Popular Tracks</h3>
+        <h3 className="font-montserrat font-semibold text-2xl text-white mb-2">Popular Tracks</h3>
+        <h3 className="font-montserrat font-semibold text-2xl text-white mb-6 chinese-text">熱門曲目</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
           {popularTracks ? (
             popularTracks.map((track) => (
@@ -253,7 +263,8 @@ const MusicSection = () => {
         </div>
         
         {/* Albums/EPs */}
-        <h3 className="font-montserrat font-semibold text-2xl text-white mb-6">Albums & EPs</h3>
+        <h3 className="font-montserrat font-semibold text-2xl text-white mb-2">Albums & EPs</h3>
+        <h3 className="font-montserrat font-semibold text-2xl text-white mb-6 chinese-text">專輯與單曲</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {albums ? (
             albums.map((album) => (
@@ -300,7 +311,8 @@ const MusicSection = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
             </svg>
-            View Full Discography on Spotify
+            <span className="mr-1">View Full Discography on Spotify</span>
+            <span className="chinese-text">在 Spotify 上查看完整唱片目錄</span>
           </a>
         </div>
       </div>

@@ -1,3 +1,6 @@
+/* 導入Google字體 - Noto Sans TC 繁體中文 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,5 +12,12 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  /* 中文字體樣式 */
+  .chinese-text {
+    @apply font-sans tracking-wide; /* 增加字間距以改善中文閱讀體驗 */
+    font-feature-settings: "tnum"; /* 使用表格數字，更適合中文排版 */
+    text-rendering: optimizeLegibility; /* 優化文字渲染 */
   }
 }

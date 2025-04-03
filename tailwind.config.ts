@@ -5,6 +5,27 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          "ui-sans-serif", 
+          "system-ui", 
+          "-apple-system", 
+          "BlinkMacSystemFont", 
+          "Segoe UI", 
+          "Roboto", 
+          "Noto Sans", 
+          "Noto Sans TC", // 新增繁體中文字體
+          "Noto Sans SC", // 新增簡體中文字體
+          "PingFang TC", // 蘋方字體 (繁體中文)
+          "PingFang SC", // 蘋方字體 (簡體中文)
+          "Microsoft JhengHei", // 微軟正黑體
+          "Microsoft YaHei", // 微軟雅黑
+          "Source Han Sans TC", // 思源黑體 繁體中文
+          "Source Han Sans SC", // 思源黑體 簡體中文
+          "sans-serif"
+        ],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

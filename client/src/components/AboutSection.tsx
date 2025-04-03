@@ -27,14 +27,23 @@ const AboutSection = () => {
           
           {/* About Content */}
           <div className="md:w-3/5">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">
               About VERE
             </h2>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6 chinese-text">
+              關於 VERE
+            </h2>
+            <p className="text-gray-300 mb-4 leading-relaxed">
               VERE is an indie pop music producer, mixing engineer, and performing artist known for creating immersive audio experiences that blend warm and rich textures. Based in Taipei, VERE has been crafting emotionally resonant music since 2022.
             </p>
-            <p className="text-gray-300 mb-8 leading-relaxed">
+            <p className="text-gray-300 mb-4 leading-relaxed chinese-text">
+              VERE 是一位獨立流行音樂製作人、混音工程師和表演藝術家，以創造融合溫暖豐富質感的沉浸式音樂體驗而聞名。在台北，VERE 自 2022 年以來一直致力於創作情感共鳴的音樂。
+            </p>
+            <p className="text-gray-300 mb-4 leading-relaxed">
               With a unique approach to songwriting and production, VERE creates music that connects with listeners on an emotional level. Each track is carefully crafted to create atmospheric and evocative soundscapes that invite listeners to experience a range of feelings and moods.
+            </p>
+            <p className="text-gray-300 mb-8 leading-relaxed chinese-text">
+              以獨特的作曲和製作方式，VERE 創作出能與聽眾在情感層面產生共鳴的音樂。每一首曲目都經過精心打造，營造出氛圍感和富有感染力的聲景，邀請聽眾體驗各種情感和氛圍。
             </p>
             
             {/* Stats - Hidden per request */}
