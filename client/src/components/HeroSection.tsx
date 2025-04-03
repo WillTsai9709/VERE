@@ -21,7 +21,7 @@ const HeroSection = () => {
         <div className="container mx-auto px-4 pb-20">
           <div className="max-w-2xl">
             <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-4">VERE</h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8">Indie pop music producer, mixing engineer, and performing artist. Blending warm and rich texture, creating a emotional atmosphere.</p>
+            <p className="text-lg md:text-xl text-gray-200 mb-8">Indie pop music band, producer, mixing engineer, and performing artist. Blending warm and rich texture, creating a emotional atmosphere.</p>
             <div className="flex flex-wrap gap-4">
               <a href="#music">
                 <Button size="lg" className="rounded-full bg-purple-800 hover:bg-purple-900">
