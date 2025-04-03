@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import MusicSection from "@/components/MusicSection";
-import VideoSection from "@/components/VideoSection";
 import GallerySection from "@/components/GallerySection";
 import ConnectSection from "@/components/ConnectSection";
 import Footer from "@/components/Footer";
@@ -47,7 +46,6 @@ const Home = () => {
         <HeroSection />
         <AboutSection />
         <MusicSection />
-        <VideoSection />
         <GallerySection />
         <ConnectSection />
       </main>
