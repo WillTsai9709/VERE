@@ -62,17 +62,11 @@ const ConnectSection = () => {
         <div className="flex flex-col md:flex-row gap-12">
           {/* Contact Information */}
           <div className="md:w-1/2">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-2">
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">
               Connect with VERE
             </h2>
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4 chinese-text">
-              聯絡 VERE
-            </h2>
-            <p className="text-gray-400 mb-4 leading-relaxed">
+            <p className="text-gray-400 mb-10 leading-relaxed">
               Follow on social media, listen on streaming platforms, or reach out directly for bookings and inquiries.
-            </p>
-            <p className="text-gray-400 mb-10 leading-relaxed chinese-text">
-              在社交媒體上關注，在串流平台上收聽，或直接聯絡我們進行預訂和諮詢。
             </p>
             
             {/* Contact Info */}
@@ -83,7 +77,6 @@ const ConnectSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Bookings & Inquiries</h4>
-                  <h4 className="text-white font-medium mb-1 chinese-text">預訂與諮詢</h4>
                   <a href="mailto:vere9809@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">vere9809@gmail.com</a>
                 </div>
               </div>
@@ -94,7 +87,6 @@ const ConnectSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Management</h4>
-                  <h4 className="text-white font-medium mb-1 chinese-text">管理</h4>
                   <p className="text-gray-400">Sonic Agency Berlin</p>
                   <a href="mailto:vere9809@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">vere9809@gmail.com</a>
                 </div>
@@ -106,15 +98,13 @@ const ConnectSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Record Label</h4>
-                  <h4 className="text-white font-medium mb-1 chinese-text">唱片公司</h4>
                   <p className="text-gray-400">Nebula Sounds International</p>
                 </div>
               </div>
             </div>
             
             {/* Social Media */}
-            <h3 className="font-montserrat font-semibold text-xl text-white mb-1">Follow</h3>
-            <h3 className="font-montserrat font-semibold text-xl text-white mb-4 chinese-text">關注</h3>
+            <h3 className="font-montserrat font-semibold text-xl text-white mb-4">Follow</h3>
             <div className="flex flex-wrap gap-4">
               <a 
                 href="https://open.spotify.com/artist/4EXkqFOhrs5mcfZwFgiEOF?si=zDIQP4o4T0yXjFIs2jrsSw" 
@@ -184,19 +174,14 @@ const ConnectSection = () => {
             {/* Newsletter */}
             <Card className="bg-zinc-800 rounded-xl p-6">
               <CardContent className="p-0">
-                <h3 className="font-montserrat font-semibold text-xl text-white mb-1">Join the Newsletter</h3>
-                <h3 className="font-montserrat font-semibold text-xl text-white mb-2 chinese-text">訂閱電子報</h3>
-                <p className="text-gray-400 mb-3">
+                <h3 className="font-montserrat font-semibold text-xl text-white mb-2">Join the Newsletter</h3>
+                <p className="text-gray-400 mb-6">
                   Sign up to receive updates on new releases, tour dates, and exclusive content.
-                </p>
-                <p className="text-gray-400 mb-6 chinese-text">
-                  註冊以接收有關新發行、巡演日期和獨家內容的更新。
                 </p>
                 
                 <form onSubmit={handleSubscribe}>
                   <div className="mb-4">
-                    <Label htmlFor="email" className="block text-gray-400 mb-1 text-sm">Email Address</Label>
-                    <Label htmlFor="email" className="block text-gray-400 mb-2 text-sm chinese-text">電子郵件地址</Label>
+                    <Label htmlFor="email" className="block text-gray-400 mb-2 text-sm">Email Address</Label>
                     <Input 
                       type="email" 
                       id="email" 
@@ -215,18 +200,14 @@ const ConnectSection = () => {
                       className="mt-1 mr-2"
                     />
                     <div>
-                      <Label htmlFor="consent" className="text-gray-400 text-sm block mb-1">
+                      <Label htmlFor="consent" className="text-gray-400 text-sm block">
                         I agree to receive emails about VERE music, merchandise, and events. You can unsubscribe at any time.
-                      </Label>
-                      <Label htmlFor="consent" className="text-gray-400 text-sm block chinese-text">
-                        我同意接收有關 VERE 音樂、商品和活動的電子郵件。您可以隨時取消訂閱。
                       </Label>
                     </div>
                   </div>
                   
                   <Button type="submit" className="w-full py-3 bg-purple-800 hover:bg-purple-900 text-white font-medium rounded-lg transition-colors duration-300">
-                    <span className="mr-1">Subscribe</span>
-                    <span className="chinese-text">訂閱</span>
+                    Subscribe
                   </Button>
                 </form>
               </CardContent>
