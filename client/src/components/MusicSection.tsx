@@ -192,6 +192,18 @@ const MusicSection = () => {
                     </svg>
                     LinkFire
                   </a>
+                  
+                  <a 
+                    href="https://streetvoice.com/Will8188/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-5 py-2 bg-zinc-900 hover:bg-zinc-700 text-white font-medium rounded-full border border-gray-300/20 transition-colors duration-300"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3-13.5v7c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3c.35 0 .69.06 1 .17V7.5l-4 1v5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3c.35 0 .69.06 1 .17V5l8-2z"/>
+                    </svg>
+                    StreetVoice
+                  </a>
                 </div>
               </div>
             </div>
