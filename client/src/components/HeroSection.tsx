@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Music, UserPlus } from "lucide-react";
-import bannerImage from "../assets/DSC00061.jpg";
+import bannerImage from "../assets/DSC00044.jpg";
 
 const HeroSection = () => {
   return (
@@ -11,7 +11,7 @@ const HeroSection = () => {
         <img 
           src={bannerImage} 
           alt="VERE artists portrait" 
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-top"
         />
       </div>
       
