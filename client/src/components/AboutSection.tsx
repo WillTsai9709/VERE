@@ -20,7 +20,7 @@ const AboutSection = () => {
                 className="w-full h-auto rounded-lg shadow-md"
               />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-pink-600 rounded-lg flex items-center justify-center">
-                <span className="font-montserrat font-bold text-white text-sm">SINCE<br />2018</span>
+                <span className="font-montserrat font-bold text-white text-sm">SINCE<br />2022</span>
               </div>
             </div>
           </div>
@@ -31,27 +31,13 @@ const AboutSection = () => {
               About VERE
             </h2>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              VERE is the electronic music project of Alex Vega, a producer and performer known for creating immersive audio experiences that blend atmospheric soundscapes with driving beats. Based in Berlin, VERE has been pushing the boundaries of electronic music since 2018.
+              VERE is the electronic music project of Alex Vega, a producer and performer known for creating immersive audio experiences that blend atmospheric soundscapes with driving beats. Based in Berlin, VERE has been pushing the boundaries of electronic music since 2022.
             </p>
             <p className="text-gray-300 mb-8 leading-relaxed">
               With influences ranging from ambient and techno to experimental electronic and cinematic scores, VERE creates music that takes listeners on a journey through sound and emotion. The project has performed at clubs and festivals across Europe and released music on several respected electronic labels.
             </p>
             
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-              <Card className="bg-zinc-800 rounded-lg p-6 text-center">
-                <div className="text-pink-500 text-3xl font-bold font-montserrat mb-2">500K+</div>
-                <div className="text-sm text-gray-400">Monthly Listeners</div>
-              </Card>
-              <Card className="bg-zinc-800 rounded-lg p-6 text-center">
-                <div className="text-pink-500 text-3xl font-bold font-montserrat mb-2">42</div>
-                <div className="text-sm text-gray-400">Releases</div>
-              </Card>
-              <Card className="bg-zinc-800 rounded-lg p-6 text-center">
-                <div className="text-pink-500 text-3xl font-bold font-montserrat mb-2">23</div>
-                <div className="text-sm text-gray-400">Countries Toured</div>
-              </Card>
-            </div>
+            {/* Stats - Hidden per request */}
             
             {/* Music Genres */}
             <div className="flex flex-wrap gap-2">
