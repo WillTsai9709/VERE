@@ -18,9 +18,9 @@ const AboutSection = () => {
               <img 
                 src={aboutImage} 
                 alt="VERE artist portrait" 
-                className="w-full h-auto rounded-lg shadow-md"
+                className="w-full h-auto rounded-full shadow-md aspect-square object-cover"
               />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-pink-600 rounded-lg flex items-center justify-center">
+              <div className="absolute bottom-0 right-0 w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center">
                 <span className="font-montserrat font-bold text-white text-sm">SINCE<br />2022</span>
               </div>
             </div>
