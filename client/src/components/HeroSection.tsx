@@ -41,7 +41,7 @@ const HeroSection = () => {
       {/* Social Media Quick Links */}
       <div className="absolute top-8 right-8 z-30 flex space-x-4">
         <a 
-          href="https://spotify.com" 
+          href="https://open.spotify.com/artist/4EXkqFOhrs5mcfZwFgiEOF" 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-10 h-10 bg-zinc-800/80 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
@@ -52,7 +52,7 @@ const HeroSection = () => {
           </svg>
         </a>
         <a 
-          href="https://youtube.com" 
+          href="https://www.youtube.com/@thisisvere" 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-10 h-10 bg-zinc-800/80 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
@@ -63,7 +63,7 @@ const HeroSection = () => {
           </svg>
         </a>
         <a 
-          href="https://instagram.com" 
+          href="https://www.instagram.com/thisisvere/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-10 h-10 bg-zinc-800/80 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"

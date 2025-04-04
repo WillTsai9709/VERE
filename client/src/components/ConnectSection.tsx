@@ -118,7 +118,7 @@ const ConnectSection = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/thisisvere?igsh=MWRya3F3YXV1ZWdzaw%3D%3D&utm_source=qr" 
+                href="https://www.instagram.com/thisisvere/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:opacity-90 flex items-center justify-center rounded-full transition-opacity duration-300"
@@ -129,7 +129,7 @@ const ConnectSection = () => {
                 </svg>
               </a>
               <a 
-                href="https://youtube.com/@vere9809?si=1KOkzlhCcFVbWZZD" 
+                href="https://www.youtube.com/@thisisvere" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-[#FF0000] hover:bg-[#CC0000] flex items-center justify-center rounded-full transition-colors duration-300"
@@ -142,7 +142,7 @@ const ConnectSection = () => {
               {/* Facebook icon hidden */}
               {/* Twitter icon hidden */}
               <a 
-                href="https://soundcloud.com" 
+                href="https://soundcloud.com/thisisvere" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-[#FF5500] hover:bg-[#E64D00] flex items-center justify-center rounded-full transition-colors duration-300"
