@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Share2, Play, Volume2 } from "lucide-react";
-import MusicPlayer from "./ui/music-player";
+import { Heart, Share2, Play, ExternalLink } from "lucide-react";
 
 interface Track {
   id: string;
@@ -25,8 +24,6 @@ interface Album {
 }
 
 const MusicSection = () => {
-  const [currentTrackId, setCurrentTrackId] = useState<string | null>(null);
-  
   const { 
     data: featuredTrack, 
     isLoading: isLoadingFeaturedTrack,
@@ -62,10 +59,6 @@ const MusicSection = () => {
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
   });
-  
-  const playTrack = (trackId: string) => {
-    setCurrentTrackId(trackId);
-  };
 
   const formatDuration = (ms: number) => {
     const minutes = Math.floor(ms / 60000);
@@ -126,11 +119,20 @@ const MusicSection = () => {
                   </div>
                 </div>
                 
-                {/* Audio Player */}
-                <MusicPlayer 
-                  trackId={featuredTrack?.id || ''}
-                  onPlay={() => featuredTrack?.id && playTrack(featuredTrack.id)}
-                />
+                {/* Listen Button */}
+                <div className="mb-6">
+                  <a 
+                    href={`https://open.spotify.com/track/${featuredTrack?.id || ''}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center justify-center px-6 py-3 mt-4 bg-[#1DB954] hover:bg-[#1AA64B] text-white font-medium rounded-lg transition-colors duration-300 w-full md:w-auto"
+                  >
+                    <Play className="h-5 w-5 mr-2" />
+                    <span className="mr-2">Listen on Spotify</span>
+                    <span className="chinese-text">在 Spotify 上收聽</span>
+                    <ExternalLink className="h-4 w-4 ml-2" />
+                  </a>
+                </div>
                 
                 {/* Actions */}
                 <div className="flex flex-wrap gap-4 mt-6">
