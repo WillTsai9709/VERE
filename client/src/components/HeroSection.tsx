@@ -1,19 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Music, UserPlus } from "lucide-react";
-import bannerImage from "../assets/vere_banner.png";
+import bannerImage from "../assets/banner-image-2.png";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Hero Image */}
-      <div className="relative h-[60vh] w-full bg-black">
+      <div className="relative h-[50vh] w-full bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900 z-10"></div>
-        <img 
-          src={bannerImage} 
-          alt="VERE logo with wave texture" 
-          className="w-full h-full object-cover opacity-90"
-          style={{ objectPosition: '50% 50%' }}
-        />
+        <div className="flex items-center justify-center h-full">
+          <img 
+            src={bannerImage} 
+            alt="VERE logo" 
+            className="w-full max-w-3xl h-auto object-contain opacity-100"
+            style={{ maxHeight: '60%' }}
+          />
+        </div>
       </div>
       
       {/* Hero Content Overlay */}
