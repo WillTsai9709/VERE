@@ -15,7 +15,7 @@ const AboutSection = () => {
           <div className="md:w-2/5">
             <div className="relative">
               <img 
-                src="/images/profile_photo.jpeg" 
+                src="/images/profile_photo.png" 
                 alt="VERE artist portrait" 
                 className="w-full h-auto rounded-full shadow-md aspect-square object-cover"
                 style={{ objectPosition: '50% 30%' }} /* 向上调整视角：默认是50% 50%，改为50% 30%使视角上移 */
