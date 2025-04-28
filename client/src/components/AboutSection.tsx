@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import aboutImage from "../assets/about-image.jpg";
+import aboutImage from "../assets/profile_photo.jpeg";
 
 const AboutSection = () => {
   const { data: artistInfo } = useQuery({
@@ -19,6 +19,7 @@ const AboutSection = () => {
                 src={aboutImage} 
                 alt="VERE artist portrait" 
                 className="w-full h-auto rounded-full shadow-md aspect-square object-cover"
+                style={{ objectPosition: '50% 30%' }} /* 向上调整视角：默认是50% 50%，改为50% 30%使视角上移 */
               />
               <div className="absolute bottom-0 right-0 w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center">
                 <span className="font-montserrat font-bold text-white text-sm">SINCE<br />2022</span>
