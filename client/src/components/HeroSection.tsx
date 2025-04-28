@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Music, UserPlus } from "lucide-react";
-import bannerImage from "../assets/DSC00044.jpg";
+import bannerImage from "../assets/vere_banner.png";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Hero Image */}
-      <div className="relative h-[80vh] w-full">
+      <div className="relative h-[60vh] w-full bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900 z-10"></div>
         <img 
           src={bannerImage} 
-          alt="VERE artists portrait" 
-          className="w-full h-full object-cover"
-          style={{ objectPosition: '50% 15%' }}
+          alt="VERE logo with wave texture" 
+          className="w-full h-full object-cover opacity-90"
+          style={{ objectPosition: '50% 50%' }}
         />
       </div>
       
@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex items-end z-20">
         <div className="container mx-auto px-4 pb-20">
           <div className="max-w-2xl">
-            <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-4">VERE</h1>
+            {/* Removed h1 as the VERE text is already in the banner image */}
             <p className="text-lg md:text-xl text-gray-200 mb-8">Indie pop music band, producer, mixing engineer, and performing artist. Blending warm and rich texture, creating a emotional atmosphere.</p>
             <div className="flex flex-wrap gap-4">
               <a href="#music">
@@ -44,7 +44,7 @@ const HeroSection = () => {
           href="https://open.spotify.com/artist/4EXkqFOhrs5mcfZwFgiEOF" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-10 h-10 bg-zinc-800/80 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
+          className="w-10 h-10 bg-black/40 border border-gray-500/30 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
           aria-label="Spotify"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -55,7 +55,7 @@ const HeroSection = () => {
           href="https://www.youtube.com/@thisisvere" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-10 h-10 bg-zinc-800/80 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
+          className="w-10 h-10 bg-black/40 border border-gray-500/30 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
           aria-label="YouTube"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -66,7 +66,7 @@ const HeroSection = () => {
           href="https://www.instagram.com/thisisvere/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-10 h-10 bg-zinc-800/80 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
+          className="w-10 h-10 bg-black/40 border border-gray-500/30 hover:bg-purple-500 flex items-center justify-center rounded-full transition-colors duration-300"
           aria-label="Instagram"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
