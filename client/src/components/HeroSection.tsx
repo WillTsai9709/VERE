@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Music, UserPlus } from "lucide-react";
+import bannerImage from "@assets/Black Beige Elegant Texture January Email Header-2.png";
 
 const HeroSection = () => {
   return (
@@ -9,7 +10,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900 z-10"></div>
         <div className="flex items-center justify-center h-full">
           <img 
-            src="/images/banner-image-2.png" 
+            src={bannerImage} 
             alt="VERE logo" 
             className="w-full max-w-3xl h-auto object-contain opacity-100"
             style={{ maxHeight: '60%' }}
