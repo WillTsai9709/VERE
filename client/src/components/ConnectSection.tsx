@@ -61,11 +61,11 @@ const ConnectSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-12">
           {/* Contact Information */}
-          <div className="md:w-1/2">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">
+          <div className="w-full max-w-2xl mx-auto">
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6 text-center">
               Connect with VERE
             </h2>
-            <p className="text-gray-400 mb-10 leading-relaxed">
+            <p className="text-gray-400 mb-10 leading-relaxed text-center">
               Follow on social media, listen on streaming platforms, or reach out directly for bookings and inquiries.
             </p>
             
@@ -87,7 +87,6 @@ const ConnectSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Management</h4>
-                  <p className="text-gray-400">Sonic Agency Berlin</p>
                   <a href="mailto:vere9809@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">vere9809@gmail.com</a>
                 </div>
               </div>
@@ -104,8 +103,8 @@ const ConnectSection = () => {
             </div>
             
             {/* Social Media */}
-            <h3 className="font-montserrat font-semibold text-xl text-white mb-4">Follow</h3>
-            <div className="flex flex-wrap gap-4">
+            <h3 className="font-montserrat font-semibold text-xl text-white mb-4 text-center">Follow</h3>
+            <div className="flex flex-wrap gap-4 justify-center">
               <a 
                 href="https://open.spotify.com/artist/4EXkqFOhrs5mcfZwFgiEOF?si=zDIQP4o4T0yXjFIs2jrsSw" 
                 target="_blank" 
@@ -167,11 +166,10 @@ const ConnectSection = () => {
             </div>
           </div>
           
-          {/* Newsletter Only */}
+          {/* Newsletter Hidden as requested */}
+          {/*
           <div className="md:w-1/2">
-            {/* Tour dates section hidden */}
             
-            {/* Newsletter */}
             <Card className="bg-zinc-800 rounded-xl p-6">
               <CardContent className="p-0">
                 <h3 className="font-montserrat font-semibold text-xl text-white mb-2">Join the Newsletter</h3>
@@ -213,6 +211,7 @@ const ConnectSection = () => {
               </CardContent>
             </Card>
           </div>
+          */}
         </div>
       </div>
     </section>
