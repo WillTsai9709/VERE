@@ -97,7 +97,7 @@ const ConnectSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Record Label</h4>
-                  <p className="text-gray-400">Nebula Sounds International</p>
+                  <p className="text-gray-400">VERE</p>
                 </div>
               </div>
             </div>
